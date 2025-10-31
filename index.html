@@ -85,37 +85,42 @@
             </div>
 
             <form class="contato-form" id="formContato">
-                <div class="form-group">
-                    <input type="text" id="nomeContato" placeholder="Seu nome completo" required>
-                </div>
-                
-                <div class="form-group">
-                    <input type="email" id="emailContato" placeholder="Seu melhor email" required>
-                </div>
-                
-                <div class="form-group">
-                    <input type="tel" id="telefoneContato" placeholder="Seu telefone (opcional)">
-                </div>
-                
-                <div class="form-group">
-                    <select id="assuntoContato" required>
-                        <option value="">Selecione o assunto</option>
-                        <option value="duvida">Dúvida</option>
-                        <option value="sugestao">Sugestão</option>
-                        <option value="parceria">Proposta de Parceria</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <textarea id="mensagemContato" placeholder="Sua mensagem..." rows="5" required></textarea>
-                </div>
-                
-                <button type="submit" class="btn-enviar">
-                    <span class="btn-text">Enviar Mensagem</span>
-                    <span class="btn-loading" style="display: none;">Enviando...</span>
-                </button>
-            </form>
+    <div class="form-group">
+        <label for="nomeContato">Seu nome completo</label>
+        <input type="text" id="nomeContato" placeholder="Seu nome completo" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="emailContato">Seu melhor email</label>
+        <input type="email" id="emailContato" placeholder="Seu melhor email" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="telefoneContato">Seu telefone (opcional)</label>
+        <input type="tel" id="telefoneContato" placeholder="Seu telefone (opcional)">
+    </div>
+    
+    <div class="form-group">
+        <label for="assuntoContato">Selecione o assunto</label>
+        <select id="assuntoContato" required>
+            <option value="">Selecione o assunto</option>
+            <option value="duvida">Dúvida</option>
+            <option value="sugestao">Sugestão</option>
+            <option value="parceria">Proposta de Parceria</option>
+            <option value="outro">Outro</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="mensagemContato">Sua mensagem...</label>
+        <textarea id="mensagemContato" placeholder="Sua mensagem..." rows="5" required></textarea>
+    </div>
+    
+    <button type="submit" class="btn-enviar">
+        <span class="btn-text">Enviar Mensagem</span>
+        <span class="btn-loading" style="display: none;">Enviando...</span>
+    </button>
+</form>
         </div>
     </section>
 
@@ -123,4 +128,5 @@
         <p>Amazônia &copy; 2025 - Jennifer Rodrigues Barbosa</p>
     </footer>
 </body>
+
 </html>
