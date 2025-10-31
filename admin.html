@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Amazônia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="firebase-config.js"></script>
+    <script defer src="admin.js"></script>
+</head>
+<body>
+    <!-- Modal de Senha -->
+    <div id="modalSenha" class="modal-overlay" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Acesso Administrativo</h2>
+                <p id="modalDesc">Digite a senha para acessar o painel de administração</p>
+            </div>
+            <div class="modal-body">
+                <input type="password" id="inputSenha" class="modal-input" placeholder="••••••••" aria-required="true">
+                <button id="btnVerificarSenha" class="modal-btn">
+                    <span class="btn-text">Acessar</span>
+                    <span class="btn-loading" style="display: none;">Verificando...</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <header class="admin-header">
+        <div class="header-content">
+            <div class="header-info">
+                <h1 id="a">Painel Administrativo</h1>
+                <p style="color: #1b5e20;">Gerencie as espécies da Amazônia</p>
+            </div>
+            <a href="index.html" class="btn-voltar">
+                Voltar ao Site
+            </a>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="admin-container">
+            <section class="admin-card">
+                <div class="card-header">
+                    <h2>Cadastrar Nova Espécie</h2>
+                    <p>Adicione novas plantas ou animais ao catálogo</p>
+                </div>
+                
+                <form id="formEspecie" class="admin-form">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="nome">Nome da Espécie *</label>
+                            <input type="text" id="nome" placeholder="Ex: Vitória-régia, Onça-pintada..." required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="descricao">Descrição *</label>
+                            <textarea id="descricao" placeholder="Descreva as características da espécie..." rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipo">Tipo da Espécie *</label>
+                            <div class="select-wrapper">
+                                <select id="tipo" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="planta">🌿 Planta</option>
+                                    <option value="animal">🐾 Animal</option>
+                                </select>
+                                <div class="select-arrow">▼</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="imagem">URL da Imagem *</label>
+                            <input type="url" id="imagem" placeholder="https://exemplo.com/imagem.jpg" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="qrcode">URL do QR Code *</label>
+                            <input type="url" id="qrcode" placeholder="https://exemplo.com/qrcode" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-icon">➕</span>
+                        <span class="btn-text">Cadastrar Espécie</span>
+                        <span class="btn-loading" style="display: none;">Cadastrando...</span>
+                    </button>
+                </form>
+            </section>
+
+            <section class="admin-stats">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🌿</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="plantasCount">0</span>
+                            <span class="stat-label">Plantas</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🐾</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="animaisCount">0</span>
+                            <span class="stat-label">Animais</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalCount">0</span>
+                            <span class="stat-label">Total</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
